@@ -42,7 +42,11 @@ function gameEngine() {
     if (isCollide(snakeArr)) {
         gameOverSound.play();
         snakeDir = { x: 0, y: 0 };
-        alert("Game Over. Press Enter to play again!!");
+        Swal.fire({
+            text: 'Game Over. Please try again!!',
+            icon: 'error',
+            confirmButtonText: 'Retry'
+        });
         snakeArr = [{ x: 12, y: 15 }];
         score = 0;
     }
